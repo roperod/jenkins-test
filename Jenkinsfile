@@ -1,23 +1,22 @@
 pipeline {
   agent any
+  
   stages {
-    stage('Init') {
+    stage('Build') {
       steps {
-        echo 'Starting Init Stage'
-        git(url: 'https://github.com/roperod/jenkins-test', branch: 'main')
+        echo 'Building'
       }
     }
 
-    stage('Python Version') {
+    stage('Test') {
       steps {
-        sh '''echo "Python Version: "
-python3 -V'''
+        echo 'Testing'
       }
     }
 
-    stage('Check Files') {
+    stage('Deploy') {
       steps {
-        sh 'ls -l'
+        echo 'Deploying'
       }
     }
 
